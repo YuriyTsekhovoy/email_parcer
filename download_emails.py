@@ -29,8 +29,8 @@ if __name__ == '__main__':
 
     for item in sent_item_list:
         resp, data = imap.fetch(item, "(RFC822)")
-        raw_email = data[0][1].decode("utf-8")
-        email_message = email.message_from_string(raw_email)
+        raw_email = data[0][1]
+        email_message = email.message_from_bytes(raw_email)
         ext = '.elm'
         filename = 'msg-part-{}{}'.format(counter, ext)
         counter += 1
