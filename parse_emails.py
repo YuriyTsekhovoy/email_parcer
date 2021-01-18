@@ -46,7 +46,7 @@ if args.pattern:
     logging.warning(args.path)
     headers = get_header(args.path)
     header_string = headers.as_string()
-    print(re.findall(args.pattern, header_string))
+    print(re.findall(args.pattern + '.*\n', header_string))
 
 
 elif args.string:
